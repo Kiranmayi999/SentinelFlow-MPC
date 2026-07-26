@@ -127,23 +127,18 @@ The controller waits one hour for the well response before repeating the optimiz
 The controller evaluates future well states before approving a choke movement.
 
 ```python
-# [INSERT YOUR evaluate_candidate_move() FUNCTION HERE]
-
-# Example:
-#
-# future_states = self.predict_rollout(candidate_choke, steps=4)
-#
-# for state in future_states:
-#     if state.BHP < MIN_BHP:
-#         return False
-#
-#     if state.WHP < MIN_WHP:
-#         return False
-#
-#     if state.FLP < MIN_FLP:
-#         return False
-#
-# return True
+# CHOKE_CONTROLLER.PY: Predictive Safety Enforcement
+def evaluate_candidate_move(self, candidate_choke):
+    # Lookahead: 4-hour MPC horizon to catch delayed pressure crashes
+    future_states = self.predict_rollout(candidate_choke, steps=4)
+    
+    for state in future_states:
+        # Veto move if any future step violates physical hardware limits
+        if state.BHP < MIN_BHP or state.WHP < MIN_WHP or state.FLP < MIN_FLP:
+            self.log_warning(f"Vetoed {candidate_choke}%: Safety limit breached.")
+            return False 
+            
+    return True # Move structurally safe, approved for execution
 ```
 
 
