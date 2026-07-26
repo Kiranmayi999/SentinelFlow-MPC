@@ -73,14 +73,11 @@ def run_scenario(sim, controller, initial_target_q, scenario_name, filename):
     
     plt.tight_layout()
     
-    # Save the plot to the plots folder
     os.makedirs('../plots', exist_ok=True)
     plt.savefig(f'../plots/{filename}')
     print(f"Saved plot: ../plots/{filename}")
 
 if __name__ == "__main__":
-    # np.random.seed(42)
-    # The MockSimulator will now automatically find the CSV file on its own!
     
     # Scenario A: Startup to Target (Safe target of 120 bbl/hr)
     sim_a = MockSimulator()
