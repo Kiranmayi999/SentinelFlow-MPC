@@ -2,6 +2,10 @@
 
 > **Project:** Autonomous Production Choke Controller for a Single Naturally Flowing Oil Well
 
+**⚠️ Note on Hackathon Submission:** 
+**Due to the submission portal's strict security firewall blocking the upload of executable source code (including `.py` and `.txt` formats), only the project presentation could be uploaded to the portal before the deadline.** 
+
+**This repository contains the complete, timestamped source code for the SentinelFlow MPC system, the Mock Simulator, and the generated datasets. All code in this repository was finalized and pushed prior to the official hackathon deadline.**
 
 ##  Overview
 
