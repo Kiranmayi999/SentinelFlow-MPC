@@ -7,6 +7,7 @@
 
 **This repository contains the complete, timestamped source code for the SentinelFlow MPC system, the Mock Simulator, and the generated datasets. All code in this repository was finalized and pushed prior to the official hackathon deadline.**
 
+
 ##  Overview
 
 **SentinelFlow MPC** is a physics-aware Model Predictive Control (MPC) architecture designed to autonomously regulate production choke valves in naturally flowing oil and gas wells. By combining mathematical system identification (FOPDT) with machine learning surrogate models, this controller dynamically tracks target flow rates while strictly enforcing physical safety boundaries to prevent liquid loading and asset degradation.
