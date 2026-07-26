@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from src.mock_simulator import MockSimulator
+from mock_simulator import MockSimulator
 
 
 def generate_step_test_data(choke_start=0, choke_end=100, choke_step=5,
@@ -41,7 +41,7 @@ if __name__ == "__main__":
         hours_per_step=20,
     )
 
-    df.to_csv("full_range_step_test_data.csv", index=False)
+    df.to_csv("../data/full_range_step_test_data.csv", index=False)
 
     print(f"Saved {len(df)} rows -> full_range_step_test_data.csv")
     print(f"Choke levels tested: {sorted(df.Choke_pct.unique())}")

@@ -4,7 +4,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-def plot_step_test(df, fname="step_test_plot.png"):
+def plot_step_test(df, fname="../plots/step_test_plot.png"):
     fig, axs = plt.subplots(5, 1, figsize=(10, 12), sharex=True)
     axs[0].step(df.time_hr, df.choke_pct, where="post", color="black")
     axs[0].set_ylabel("Choke (%)")
@@ -54,7 +54,7 @@ def extract_steady_state(df):
 
     print("\n--- DELIVERABLE 1a: STEADY-STATE OPERATING POINTS & GAINS ---")
     print(ss_table.to_string(index=False))
-    ss_table.to_csv("steady_state_analysis.csv", index=False)
+    ss_table.to_csv("../data/steady_state_analysis.csv", index=False)
     print("\nSaved steady_state_analysis.csv")
     return ss_table
 
@@ -120,13 +120,13 @@ def characterize_dynamics(df, tol=0.05):
     print("\n--- DELIVERABLE 1b: DYNAMIC RESPONSE (tau = time to 63% of change, "
           f"settle = time within +/-{int(tol*100)}% of final) ---")
     print(dyn_table.to_string(index=False))
-    dyn_table.to_csv("dynamic_response_analysis.csv", index=False)
+    dyn_table.to_csv("../data/dynamic_response_analysis.csv", index=False)
     print("\nSaved dynamic_response_analysis.csv")
     return dyn_table
 
 
 if __name__ == "__main__":
-    raw = pd.read_csv("Autonomous_Choke_Control_Simulated_Dataset.csv")
+    raw = pd.read_csv("../data/Autonomous_Choke_Control_Simulated_Dataset.csv")
     df = raw.rename(columns={
         "Time_hr": "time_hr", "Choke_pct": "choke_pct",
         "OilRate_bbl_hr": "Q_bblhr", "WHP_psi": "WHP_psi",
