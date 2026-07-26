@@ -1,0 +1,5 @@
+step_id,choke_pct,step_start_hr,Q_bblhr_tau_hr,Q_bblhr_settle_hr,WHP_psi_tau_hr,WHP_psi_settle_hr,FLP_psi_tau_hr,FLP_psi_settle_hr,BHP_psi_tau_hr,BHP_psi_settle_hr
+2,40,20,7,16,6,13,9,16,8,17
+3,55,40,5,23,8,25,7,27,15,27
+4,45,70,6,16,8,16,6,17,8,18
+5,65,90,5,16,8,23,8,20,12,25
